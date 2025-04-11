@@ -7,9 +7,9 @@
   "-DANDROID_PLATFORM=android-21" ^
   "-DANDROID_ABI=arm64-v8a" ^
   "-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a" ^
-  "-DANDROID_NDK=C:\\Users\\Riski Sembiring\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
-  "-DCMAKE_ANDROID_NDK=C:\\Users\\Riski Sembiring\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973" ^
-  "-DCMAKE_TOOLCHAIN_FILE=C:\\Users\\Riski Sembiring\\AppData\\Local\\Android\\Sdk\\ndk\\27.0.12077973\\build\\cmake\\android.toolchain.cmake" ^
+  "-DANDROID_NDK=C:\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_ANDROID_NDK=C:\\Android\\Sdk\\ndk\\27.0.12077973" ^
+  "-DCMAKE_TOOLCHAIN_FILE=C:\\Android\\Sdk\\ndk\\27.0.12077973\\build\\cmake\\android.toolchain.cmake" ^
   "-DCMAKE_MAKE_PROGRAM=C:\\Users\\Riski Sembiring\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
   "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\\testProject\\build\\app\\intermediates\\cxx\\RelWithDebInfo\\x5e5i3g1\\obj\\arm64-v8a" ^
   "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=D:\\testProject\\build\\app\\intermediates\\cxx\\RelWithDebInfo\\x5e5i3g1\\obj\\arm64-v8a" ^
