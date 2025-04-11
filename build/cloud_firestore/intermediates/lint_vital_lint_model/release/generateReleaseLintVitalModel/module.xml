@@ -6,7 +6,7 @@
     maven="io.flutter.plugins.firebase.cloudfirestore:cloud_firestore:1.0-SNAPSHOT"
     agpVersion="8.7.0"
     buildFolder="D:\testProject\build\cloud_firestore"
-    bootClassPath="C:\Users\Riski Sembiring\AppData\Local\Android\Sdk\platforms\android-34\android.jar;C:\Users\Riski Sembiring\AppData\Local\Android\Sdk\build-tools\34.0.0\core-lambda-stubs.jar"
+    bootClassPath="C:\Android\Sdk\platforms\android-34\android.jar;C:\Android\Sdk\build-tools\34.0.0\core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-34"
     neverShrinking="true">

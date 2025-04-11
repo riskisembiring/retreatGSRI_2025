@@ -138,7 +138,7 @@
       ],
       "cmakeToolchainFile": "C:\\Android\\Sdk\\ndk\\27.0.12077973\\build\\cmake\\android.toolchain.cmake",
       "cmake": {
-        "cmakeExe": "C:\\Users\\Riski Sembiring\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\cmake.exe"
+        "cmakeExe": "C:\\Android\\Sdk\\cmake\\3.22.1\\bin\\cmake.exe"
       },
       "stlSharedObjectMap": {
         "LIBCXX_SHARED": {
@@ -154,13 +154,13 @@
       },
       "project": {
         "rootBuildGradleFolder": "D:\\testProject\\android",
-        "sdkFolder": "C:\\Users\\Riski Sembiring\\AppData\\Local\\Android\\Sdk",
+        "sdkFolder": "C:\\Android\\Sdk",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false
       },
       "outputOptions": [],
-      "ninjaExe": "C:\\Users\\Riski Sembiring\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "ninjaExe": "C:\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
       "hasBuildTimeInformation": true
     },
     "prefabClassPaths": [],
@@ -187,7 +187,7 @@
     "-DANDROID_NDK\u003dC:\\Android\\Sdk\\ndk\\27.0.12077973",
     "-DCMAKE_ANDROID_NDK\u003dC:\\Android\\Sdk\\ndk\\27.0.12077973",
     "-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Android\\Sdk\\ndk\\27.0.12077973\\build\\cmake\\android.toolchain.cmake",
-    "-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\Riski Sembiring\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-DCMAKE_MAKE_PROGRAM\u003dC:\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
     "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dD:\\testProject\\build\\app\\intermediates\\cxx\\RelWithDebInfo\\x5e5i3g1\\obj\\armeabi-v7a",
     "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dD:\\testProject\\build\\app\\intermediates\\cxx\\RelWithDebInfo\\x5e5i3g1\\obj\\armeabi-v7a",
     "-DCMAKE_BUILD_TYPE\u003dRelWithDebInfo",
