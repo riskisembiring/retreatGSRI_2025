@@ -11,7 +11,6 @@ void main() async {
   runApp(MyApp());
 }
 
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,17 +42,33 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            Text('Tema : "Bertumbuh dalam kasih, Bersinar dalam iman"'),
-            Text('Hari  : Kamis - Jumat'),
-            Text('Tanggal : 01 - 02 Mei 2025'),
+            Text('Tema     : "Bertumbuh dalam kasih, Bersinar dalam iman"'),
+            Text('Hari     : Kamis - Jumat'),
+            Text('Tanggal  : 01 - 02 Mei 2025'),
             SizedBox(height: 30),
             Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => DaftarPage()));
-                },
-                child: Text('Daftar'),
+              child: Column(
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => DaftarPage()),
+                      );
+                    },
+                    child: Text('Daftar'),
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => DataPage()),
+                      );
+                    },
+                    child: Text('Lihat Data Pendaftar'),
+                  ),
+                ],
               ),
             ),
           ],
@@ -71,8 +86,6 @@ class DaftarPage extends StatefulWidget {
 
 class _DaftarPageState extends State<DaftarPage> {
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController sizeController = TextEditingController();
-
   String selectedSize = '';
   final List<String> ukuranBaju = ['S', 'M', 'L', 'XL', 'XXL'];
 
@@ -110,6 +123,14 @@ class _DaftarPageState extends State<DaftarPage> {
         nameController.clear();
         selectedSize = '';
       });
+
+      // Navigasi ke halaman data
+      Future.delayed(Duration(seconds: 1), () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (_) => DataPage()),
+        );
+      });
     } catch (e) {
       showSnackbar('Gagal menyimpan: $e');
     }
@@ -118,7 +139,6 @@ class _DaftarPageState extends State<DaftarPage> {
   @override
   void dispose() {
     nameController.dispose();
-    sizeController.dispose();
     super.dispose();
   }
 
@@ -158,6 +178,48 @@ class _DaftarPageState extends State<DaftarPage> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+// Halaman untuk Menampilkan Data Peserta
+class DataPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Data Peserta')),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('baju')
+            .orderBy('timestamp', descending: true)
+            .snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          }
+
+          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+            return Center(child: Text('Belum ada data pendaftar.'));
+          }
+
+          final docs = snapshot.data!.docs;
+
+          return ListView.builder(
+            itemCount: docs.length,
+            itemBuilder: (context, index) {
+              final data = docs[index];
+              return Card(
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text(data['name']),
+                  subtitle: Text('Ukuran: ${data['size']}'),
+                ),
+              );
+            },
+          );
+        },
       ),
     );
   }
